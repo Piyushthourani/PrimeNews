@@ -11,11 +11,15 @@ export class MyService {
 
   constructor(private http:HttpClient) { }
 
-  getTopHeadlines(country: string = 'us') {
-    return this.http.get<any>(this.url+"top-headlines?country=" + country + "&apiKey=" + this.API_KEY);
+  getTopHeadlines() {
+    return this.http.get<any>(this.url+"top-headlines?category=general" + "&apiKey=" + this.API_KEY);
   }
 
   searchNews(query: string) {
     return this.http.get<any>(this.url+"everything?q=" + query + "&apiKey=" + this.API_KEY);
+  }
+
+  getNewsByCategory(category: string) {
+    return this.http.get(`${this.url}top-headlines?category=${category}&apiKey=${this.API_KEY}`);
   }
 }
