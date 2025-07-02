@@ -35,4 +35,13 @@
       </div>
     </div>
   </div>
+  <p-paginator 
+    (onPageChange)="onPageChange($event)" 
+    [first]="first" 
+    [rows]="rows" 
+    [totalRecords]="totalRecords" 
+    [rowsPerPageOptions]="[9, 18, 27]"
+    [showCurrentPageReport]="true"
+    currentPageReportTemplate="Showing {first} to {last} of {totalRecords} articles">
+  </p-paginator>
 </div>
